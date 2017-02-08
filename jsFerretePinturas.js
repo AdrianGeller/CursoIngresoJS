@@ -23,7 +23,7 @@ var gradosCentigrados;
 var gradosFarenheit;
 
 
-gradosCentigrados=document.getElementById('Temperatura')value;
+gradosCentigrados=document.getElementById('Temperatura').value;
 
 gradosFarenheit=parseInt(gradosFarenheit);
 gradosCentigrados=parseInt(gradosCentigrados);
