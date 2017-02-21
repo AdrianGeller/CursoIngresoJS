@@ -1,7 +1,83 @@
 function Mostrar()
 {
 
+	/* iteración hasta que el usuario quiera*/
+	//alert("Función");
+
+	var respuesta="si";
+	var nota=0;
+	var sumador=0;
 	var contador=0;
+	var promedioNota;
+	var sumaNota=0;
+	var edad;
+	var nombre;
+	var sexo;
+	var masViejo;
+	var edadMasViejo;
+	var mujeresAprobadas=0;
+
+
+
+	while(respuesta=="si")
+	{
+
+		contador++;
+		//leo y valido nota
+		nota=prompt("Por favor ingrese su nota");
+		nota=parseInt(nota);
+		while(nota<0 || nota>10)
+		{
+			nota=prompt("Por favor ingrese su nota");
+			nota=parseInt(nota);
+		}
+
+		edad=prompt("Por favor, ingrese su edad");//transformar a entero y validar que tenga entre 0 y 100
+		edad=parseInt(edad);
+		nombre=prompt("Por favor, ingrese su nombre");
+		sexo=prompt("Por favor, ingrese su sexo, f si es femenino y m si es masculino");//validar que sea f o m
+		//acá termino la carga y valdiación de datos
+		//Comenzamos a hacer las operaciones necesarias
+
+		if(contador==0)
+			{
+				masViejo=nombre;
+				edadMasViejo=edad;
+			}
+			else
+				if(edad>edadMasViejo)
+				{
+					masViejo=nombre;
+					edadMasViejo=edad;
+				}
+				/*
+				1- Cantidad de mujeres aprobadas.
+				2- Cantidad de hombres mayores a 25 aprobados.
+				3- Cantidad de mujeres menores a 20 años.
+				4- El nombre de la mujer con mejor nota.
+				5- El nombre del hombre con mejor nota.
+				6- Promedio de nota de los hombres.
+				7- Promedio de nota de las mujeres.
+				8- Porcentajes de aprobados vs desaprobados.
+				9- El sexo y el nombre de la primer persona que se saque 10.*/
+
+		if(sexo=="f" && (nota>=6 && nota <=10))
+		{
+			mujeresAprobadas++;
+		}
+
+
+
+
+		sumaNota=nota+sumaNota;
+		respuesta=prompt("Ingrese si para contiunar.");
+	}
+
+	promedioNota=sumaNota/contador;
+	console.log(promedioNota);
+	document.write("La cantidad de mujeres aprobadas es: " + mujeresAprobadas + "<br>");
+
+	/*var contador=0;
 	var positivo=0;
 	var promedioPositivos;
 	var negativo=0;
@@ -35,7 +111,7 @@ function Mostrar()
 				negativo=numero+negativo;
 				
 			}
-			else
+			else//si no es positivo o negativo el número, entonces por descarte es un cero.
 			{
 				ceros++;
 			}
@@ -52,7 +128,7 @@ function Mostrar()
 	}
 
 
-	diferencia=positivo+negativo;
+	diferencia=positivo+negativo;//para restar un número que ya es negativo hay que poner +, poner - cambia el signo
 	promedioNegativos=negativo/contadorNegativos;
 	promedioPositivos=positivo/contadorPositivos;
 
@@ -65,5 +141,8 @@ function Mostrar()
 	document.write("El promedio de los números positivos es: "+promedioPositivos+ "<br>" );
 	document.write("El promedio de los números negativos es: "+promedioNegativos+ "<br>" );
 	document.write("La diferencia entre los números positivos y negativos es: "+diferencia );
+*/
+
+
 
 }//FIN DE LA FUNCIÓN
